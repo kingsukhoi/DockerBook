@@ -14,6 +14,7 @@ services:
   app:
     build: 
         dockerfile: Dockerfile-dev
+        context: .
     ports:
     - 8080:80
     volumes:
@@ -60,4 +61,36 @@ RUN apt-get update -y
 RUN docker-php-ext-install pdo pdo_mysql
 ```
 
-Finally 
+Finally create a file called `index.php` and put be below content in it.
+```php
+<?
+define('DBHOST', 'mysql');
+define('DBUSER', 'root');// DO NOT DO THIS IN REAL LIFE.
+define('DBPASS', 'root');//DO NOT DO THIS IN REAL LIFE.
+define('DBCONNSTRING',"mysql:host=" . DBHOST . ";charset=utf8mb4;");
+try{
+    $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $pe){
+    die($pe->getMessage());
+}
+$sql = "SELECT 'HELLO WORLD!!!'";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$result = $stmt->fetch();
+?>
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>My First PHP Container</h1>
+        <p><? echo $result[0] ?></p>
+    </body>
+</html> 
+```
+
+Finally in that folder, run `docker-compose up -d`. By default docker-compose will find a file called docker-compose.yaml, and execute that. The `-d` options makes it run in the backgroud. 
+
+To shutdown these containers, run `docker-compose down`. This will stop all the containers, and preserve all the data in the mysql database. 
+
+If you need to delete the mysql volume, run `docker-comopose down -v`, and that will delete all volumes.
