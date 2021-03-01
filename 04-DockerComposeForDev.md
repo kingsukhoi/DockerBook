@@ -91,6 +91,8 @@ $result = $stmt->fetch();
 
 Finally in that folder, run `docker-compose up -d`. By default docker-compose will find a file called docker-compose.yaml, and execute that. The `-d` options makes it run in the backgroud. 
 
+Visit `localhost:8080` to run this file.
+
 To shutdown these containers, run `docker-compose down`. This will stop all the containers, and preserve all the data in the mysql database. 
 
 If you need to delete the mysql volume, run `docker-comopose down -v`, and that will delete all volumes.
