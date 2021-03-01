@@ -6,7 +6,7 @@ On Intel platforms, the feature is called Intel VD-T. On AMD, it is called AMD-V
 
 Lookup how to do this on your computers documentation. 
 
-** Note: If you have VirtualBox or VMWare Workstation installed, it will not work after this installation **
+**Note: If you have VirtualBox or VMWare Workstation installed, it will not work after this installation**
 
 # Install Windows Subsystem for Linux
 
