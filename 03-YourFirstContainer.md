@@ -32,4 +32,5 @@ By default, Docker looks for a file called `Dockerfile` in the specified directo
 
 ## Run the container
 In the terminal, run `docker run -p 8080:80 first-container`. This tells docker to:
+- Start `first-container`
 - bind port 8080 on the host computer (where you live) to port 80 in the container. 
