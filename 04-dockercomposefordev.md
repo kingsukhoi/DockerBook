@@ -40,17 +40,17 @@ volumes:
 
 This docker-compose file does the following actions automatically:
 
-* Creates 2 services called app and MySQL
+* Creates 2 services called app and mysql
 * For app:
   * It looks in the same directory it's in for a `Dockerfile-dev` file, and builds the docker file
   * It automatically binds port 80 in the container to port 8080 on the host
   * It will mount the current directory it's in to `/var/www/html/` on the container
-  * It will wait for the MySQL container to start up
-* For MySQL:
-  * It will download and run a MariaDB container
-  * At the bottom there is a volumes deceleration. This tells docker to make a persistent volume where we can store our database. It mounts that volume to `/var/lib/mysql` on the container. 
-  * It mounts a folder `./mysql/dumpfile_location` on the host under `/docker-entrypoint-initdb.d/` on the container. One feature of the container we are using, is it will look under this directory for any sql files, and run them.
-  * It sets an environment variable called `MYSQL_ROOT_PASSWORD` to 'root'. In this container, this will set the root password to 'root'. **Warning, if you set a password to root in real life, you will get hacked**
+  * It will wait for the mysql container to start up
+* For mysql:
+  * It will download and run a mariadb container
+  * At the bottom there is a volumes deceleration. This tells docker to make a persistant volume where we can store our database. It mounts that decleration to `/var/lib/mysql` on the container. 
+  * It mount a folder `./mysql/dumpfile_location` under `/docker-entrypoint-initdb.d/` on the container. One feature of the container we are using, is it will look under this directory for any sql files, and run them.
+  * It sets an environment variable called `MYSQL_ROOT_PASSWORD` to 'root'. In this container, this will set the root password to 'root'. **Warning, if you set a password to root in real life, you will get hacked, and I will laugh at you**
   * It binds port 3306 on the host to port 3306 on the container.
 
 ## Try it out
@@ -72,8 +72,8 @@ Finally create a file called `index.php` and put be below content in it.
 ```php
 <?
 define('DBHOST', 'mysql');
-define('DBUSER', 'root');// DO NOT USE THE ROOT USER IN REAL LIFE.
-define('DBPASS', 'root');//DO NOT DO THIS PASSWORD IN REAL LIFE.
+define('DBUSER', 'root');// DO NOT DO THIS IN REAL LIFE.
+define('DBPASS', 'root');//DO NOT DO THIS IN REAL LIFE.
 define('DBCONNSTRING',"mysql:host=" . DBHOST . ";charset=utf8mb4;");
 try{
     $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
@@ -100,7 +100,7 @@ Finally in that folder, run `docker-compose up -d`. By default docker-compose wi
 
 Visit `localhost:8080` to run this file.
 
-To shutdown these containers, run `docker-compose down`. This will stop all the containers, and preserve all the data in the MySQL database.
+To shutdown these containers, run `docker-compose down`. This will stop all the containers, and preserve all the data in the mysql database.
 
-If you need to delete the MySQL volume, run `docker-comopose down -v`, and that will delete all volumes.
+If you need to delete the mysql volume, run `docker-comopose down -v`, and that will delete all volumes.
 
