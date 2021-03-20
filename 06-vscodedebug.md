@@ -1,3 +1,9 @@
+<style>
+img {
+   max-width:100%; 
+   height:auto
+}
+</style>
 # Debug PHP container with XDebug and Visual Studio Code
 
 1. Install the PHP Debug extention by Felix Becker.  

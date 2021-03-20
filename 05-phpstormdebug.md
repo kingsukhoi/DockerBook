@@ -1,3 +1,9 @@
+<style>
+img {
+   max-width:100%; 
+   height:auto
+}
+</style>
 # Debug PHP container with XDebug and PHP Storm
 
 ## Open docker-compose.yaml in PHPStorm and click the double triangle button next to servicesIMPORTANT
