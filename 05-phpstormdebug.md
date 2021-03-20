@@ -12,28 +12,35 @@ Port 9000 needs to be free. On windows check by opening PowerShell and running `
 
 If you use docker.io/kingsukhoi/phpwdebugger container, these are the instructions:
 
-1. Open the folder with PHPStorm
+1.Install the XDebug extension for your browser. 
 
-2. Start docker-compose. Either
+* For Chrome use [https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc)
+* For Firefox use [https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/)
+
+2. Open the folder with PHPStorm
+
+3. Start docker-compose. Either
 
 * Open a terminal and run `docker-compose up -d`
 * Open docker-compose.yaml in PHPStorm and clikc the double triangle button next to services
 
-  ![PHPStorm docker-compose](.gitbook/assets/PHPStormDockerCompose.png)
+![PHPStorm docker-compose](.gitbook/assets/PHPStormDockerCompose.png)
 
-3. On the top right, click the phone button. This will tell PHPStorm to start listening for connections   
+4.. On the top right, click the phone button. This will tell PHPStorm to start listening for connections   
 
 ![PHPStorm Debug Button](.gitbook/assets/PHPStormDebugButton.png)
 
-4. Set a break point, click on the space right of the line number  
+5. Set a break point, click on the space right of the line number  
 
 ![PHPStorm Break Point](.gitbook/assets/PHPStormBreakpoint.png)
 
-5. Access the php page in the browser
+6. Access the page in the browser. If you are using my docker-compose file, it's localhost:8080. Set the XDebug extension to enabled
 
-6. The page will appear to not load, and if you look at PHP Storm, the current line will be highlighted, and a debug window will open on the bottom.
+![Enable XDebug](.gitbook/assets/xdebugextensionenable.gif)
 
-![PHPStorm Debug Window](.gitbook/assets/PHPStormDebugWindow.png)
+7.Refresh your php page, and PHPStorm should go into debugging mode. 
+
+![Debug Window](.gitbook/assets/PHPStormDebugWindow.png)
 
 Breakpoints can be set on any file, including files that have been included, and PHP statements in HTML.
 

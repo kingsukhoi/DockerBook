@@ -19,22 +19,23 @@ ENTRYPOINT nginx -g 'daemon off;'
 
 Here is a break down of each line
 
-* `FROM docker.io/nginx:1.19.7`: This tells `docker build` to go to the docker.io registry, and find an image called "fedora". Docker.io is currently the most popular registry, but other services like GitLab provide the same service as well. The `:33` means pull an image with the tag "33". Docker uses the concept of tags to figure out which image you want. **WARNING,** tags can change image. By default, docker will pull the tag 'latest'. 
-* `RUN dnf install -y nginx`: For Dockerfiles, the first word of each line is a command to `docker build`. Note, it's best practice for the first word to be in all caps.  
+* `FROM docker.io/nginx:1.19.7`: This tells `docker build` to go to the docker.io registry, and find an image called "fedora". Docker.io is currently the most popular registry, but other services like GitLab provide the same service as well. 
+* The `:33` means pull an image with the tag "33". Docker uses the concept of tags to figure out which image you want. WARNING, tags can change image images. By default, docker will pull the tag 'latest'. 
+* `RUN dnf install -y nginx`: For dockerfiles, the first word of each line is a command to `docker build`. Note, it's best practice for the first word to be in all caps.  
 
 
-  The `RUN` command tells docker to run the next line, in the shell. If the command results in a change Docker will store the change and move onto the next line. If the command fails, the entire build will fail.  
+  The `RUN` command tells docker to run the next line, in the shell. If the command results in a change docker will store the change and move onto the next line. If the command fails, the entire build will fail.  
  
 
   A backslash and a new line will tell docker to escape the newline, and inclue it in the current line. This is useful if you have a massive command. 
 
-* `COPY ./test.txt /copy/example/`: This will copy a file called `./test.txt` to a folder called /copy/example/. If that folder doesn't exist in the container, it'll create it.
-* `ENTRYPOINT nginx -g 'daemon off;'`: The `ENTRYPOINT` command tells docker to run the command `nginx -g 'daemon off;'` command every time the container starts up.
+* `COPY ./test.txt /copy/example/`: This will copy a file called `./test.txt` to a folder called /copy/example/. If that folder dosen't exist, it'll create it.
+* `ENTRYPOINT nginx -g 'daemon off;'`: The `ENTRYPOINT` command tells docker to run the command `nginx -g 'daemon off;'` command everytime the container starts up.
 
 ## Build the container
 
 To build this container, create a file called `text.txt`, and create a file called `Dockerfile` and add the above code into it. Open a terminal in the same place as your Dockerfile and run `docker build -t first-container .`.   
- By default, Docker looks for a file called `Dockerfile` in the specified directory. The period at the end of the command is terminal shorthand for the current directory.
+ By default, Docker looks for a file called `Dockerfile` in the specified directory. The period at the end of the command is termial shorthand for the current directory.
 
 ## Run the container
 

@@ -43,23 +43,21 @@
 }
 ```
 
-5. Set a break point. 
+5. Set a break point.
 
 ![Breakpoint](.gitbook/assets/VSCodeBreakpoint.png)
 
-6.  On the left hand toolbar: 
-
-1. Click on the triangle with the bug. On the top of that toolbar 
-2. Make sure the drop-down menu is set to `Listen for XDebug` 
-3. Press play.  
+6. On the left hand toolbar: 1. Click on the triangle with the bug. On the top of that toolbar 2. Make sure the drop-down menu is set to `Listen for XDebug` 3. Press play.  
 
 ![Start Debug](.gitbook/assets/VSCodeStartDebug.png)
 
-7. In the browser, open your page, click the XDebug extension and set it to debug
+7. Access the page in the browser. If you are using my docker-compose file, it's localhost:8080. Set the XDebug extension to enabled
 
 ![Enable XDebug](.gitbook/assets/xdebugextensionenable.gif)
 
-8. Open your php page, and VSCode should go into debugging mode. 
+
+
+8. Refresh your php page, and VSCode should go into debugging mode. 
 
 ![Debug Window](.gitbook/assets/VSCodeDebugWindow.png)
 
