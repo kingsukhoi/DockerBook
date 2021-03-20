@@ -2,7 +2,7 @@
 
 ## Debug PHP container with XDebug and PHP Storm
 
-### Open docker-compose.yaml in PHPStorm and click the double triangle button next to servicesIMPORTANT
+### IMPORTANT: Open docker-compose.yaml in PHPStorm and click the double triangle button next to services 
 
 Port 9000 needs to be free. On windows check by opening PowerShell and running `Get-NetTCPConnection | where Localport -eq 9000 | select Localport,OwningProcess`. XDebug will bind to that port.
 
@@ -29,7 +29,7 @@ If you use docker.io/kingsukhoi/phpwdebugger container, these are the instructio
 1. Access the php page in the browser
 2. The page will appear to not load, and if you look at PHP Storm, the current line will be highlighted, and a debug window will open on the bottom.
 
-   ![PHPStorm Debug Window](.gitbook/assets/PHPStormDebugWindow.png)
+![PHPStorm Debug Window](.gitbook/assets/PHPStormDebugWindow.png)
 
 Breakpoints can be set on any file, including files that have been included, and PHP statements in HTML.
 
