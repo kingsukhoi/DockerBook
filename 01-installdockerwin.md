@@ -1,3 +1,9 @@
+<style>
+img {
+   max-width:100%; 
+   height:auto
+}
+</style>
 # Install Docker Windows
 
 Instructions created Febuary 8th 2021
