@@ -2,15 +2,20 @@
 
 ## Debug PHP container with XDebug and Visual Studio Code
 
-1. Install the PHP Debug extention by Felix Becker.  [https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
+1.Install the XDebug extension for your browser. 
+
+* For Chrome use [https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc)
+* For Firefox use [https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/)
+
+2. Install the PHP Debug extention by Felix Becker.  [https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 
 ![Install Extension](.gitbook/assets/VSCodeInstallXDebug.png)
 
-2. Open a terminal in the current folder, and run `docker-compose up -d`. In VSCode, you can press \```CTRL+ ```  
+3. Open a terminal in the current folder, and run `docker-compose up -d`. In VSCode, you can press \```CTRL+ ```  
 
 ![Terminal](.gitbook/assets/VSCodeTerminal.png)
 
-3. Create a folder called `.vscode`, and create a file called `launch.json`. In `launch.json` copy and paste the following content. If you are using git, commit this file.
+4. Create a folder called `.vscode`, and create a file called `launch.json`. In `launch.json` copy and paste the following content. If you are using git, commit this file.
 
 ```javascript
 {
@@ -38,15 +43,23 @@
 }
 ```
 
-4. Set a break point. 
+5. Set a break point. 
 
 ![Breakpoint](.gitbook/assets/VSCodeBreakpoint.png)
 
-5.  On the left hand toolbar: 1. Click on the triangle with the bug. On the top of that toolbar 2. Make sure the drop-down menu is set to `Listen for XDebug` 3. Press play.  
+6.  On the left hand toolbar: 
+
+1. Click on the triangle with the bug. On the top of that toolbar 
+2. Make sure the drop-down menu is set to `Listen for XDebug` 
+3. Press play.  
 
 ![Start Debug](.gitbook/assets/VSCodeStartDebug.png)
 
-6. Open your php page, and VSCode should go into debugging mode. 
+7. In the browser, open your page, click the XDebug extension and set it to debug
+
+![Enable XDebug](.gitbook/assets/xdebugextensionenable.gif)
+
+8. Open your php page, and VSCode should go into debugging mode. 
 
 ![Debug Window](.gitbook/assets/VSCodeDebugWindow.png)
 
