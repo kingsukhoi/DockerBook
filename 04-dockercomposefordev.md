@@ -28,7 +28,7 @@ services:
     image: docker.io/mariadb:10.3
     volumes:
     - db:/var/lib/mysql
-    - ./mysql/dumpfile_location:/docker-entrypoint-initdb.d/
+    - ./mysql/dumpfile_location/file.sql:/docker-entrypoint-initdb.d/file.sql # REPLACE file.sql with the name of the file you want to import.
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
@@ -49,7 +49,7 @@ This docker-compose file does the following actions automatically:
 * For mysql:
   * It will download and run a mariadb container
   * At the bottom there is a volumes deceleration. This tells docker to make a persistant volume where we can store our database. It mounts that decleration to `/var/lib/mysql` on the container. 
-  * It mount a folder `./mysql/dumpfile_location` under `/docker-entrypoint-initdb.d/` on the container. One feature of the container we are using, is it will look under this directory for any sql files, and run them.
+  * It mount a file `./mysql/dumpfile_location/file.sql` to `/docker-entrypoint-initdb.d/file.sql` on the container. One feature of the container we are using, is it will look under this directory for any sql files, and run them. **If one of the dosen't import, the container will not start.** For your assignment, you only need to import `stocks-3rd.sql`.
   * It sets an environment variable called `MYSQL_ROOT_PASSWORD` to 'root'. In this container, this will set the root password to 'root'. **Warning, if you set a password to root in real life, you will get hacked, and I will laugh at you**
   * It binds port 3306 on the host to port 3306 on the container.
 
