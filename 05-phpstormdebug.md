@@ -2,9 +2,9 @@
 
 ## Debug PHP container with XDebug and PHP Storm
 
-### IMPORTANT: Open docker-compose.yaml in PHPStorm and click the double triangle button next to services 
+### IMPORTANT: Port 9000 needs to be free. XDebug will bind to that port.
 
-Port 9000 needs to be free. On windows check by opening PowerShell and running `Get-NetTCPConnection | where Localport -eq 9000 | select Localport,OwningProcess`. XDebug will bind to that port.
+On windows check by opening PowerShell and running `Get-NetTCPConnection | where Localport -eq 9000 | select Localport,OwningProcess`. 
 
 **TL;DR MAKE SURE NOTHING IS BOUND TO PORT 9000**
 
