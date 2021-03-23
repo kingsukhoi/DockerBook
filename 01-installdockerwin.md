@@ -1,14 +1,10 @@
-<style>
-img {
-   max-width:100%; 
-   height:auto
-}
-</style>
 # Install Docker Windows
+
+## Install Docker Windows
 
 Instructions created Febuary 8th 2021
 
-## Enable virtualization
+### Enable virtualization
 
 On Windows, Docker requires that you enable virtualization in the BIOS. On Intel platforms, the feature is called Intel VD-T. On AMD, it is called AMD-V.
 
@@ -16,57 +12,47 @@ Lookup how to do this on your computers documentation.
 
 **Note: If you have VirtualBox or VMWare Workstation installed, it will not work after this installation**
 
-## Install Windows Subsystem for Linux
+### Install Windows Subsystem for Linux
 
 1. Open Control Panel. Type in Control panel into the start menu, and click on the below icon.   
 
+![Control Panel Image](.gitbook/assets/ControlPanel.png)
 
-   ![Control Panel Image](.gitbook/assets/ControlPanel.png)
+1. Click on Programs  
 
-2. Click on Programs  
+![Programs Image](.gitbook/assets/Programs.png)
 
+1. Click on 'Turn Windows Features On or Off'  
 
-   ![Programs Image](.gitbook/assets/Programs.png)
+![Windows Features Image](.gitbook/assets/WindowsFeatures.png)
 
-3. Click on 'Turn Windows Features On or Off'  
+1. Scroll to the bottom and click on Windows Subsystem for Linux  
 
+![Install WSL Image](.gitbook/assets/InstallWSL.png)
 
-   ![Windows Features Image](.gitbook/assets/WindowsFeatures.png)
+1. A popup will appear to install the feature, and ask you to restart.  
 
-4. Scroll to the bottom and click on Windows Subsystem for Linux  
+![WSL Restart](.gitbook/assets/WSLRestart.png)
 
-
-   ![Install WSL Image](.gitbook/assets/InstallWSL.png)
-
-5. A popup will appear to install the feature, and ask you to restart.  
-
-
-   ![WSL Restart](.gitbook/assets/WSLRestart.png)
-
-## Install Docker
+### Install Docker
 
 1. Click on this link, and click 'Get Docker' [Link](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)  
 
+![Download Docker](.gitbook/assets/DownloadDocker.png)
 
-   ![Download Docker](.gitbook/assets/DownloadDocker.png)
+1. Once that is installed, open the installer. It'll ask to install components for WSL 2, make sure that is checked. When the install succeds, close the window  
 
-2. Once that is installed, open the installer. It'll ask to install components for WSL 2, make sure that is checked. When the install succeds, close the window  
+![Install Docker](.gitbook/assets/DockerInstall.png)
 
+1. Open docker from the start menu  
 
-   ![Install Docker](.gitbook/assets/DockerInstall.png)
+![Open Docker](.gitbook/assets/DockerStartMenu.png)
 
-3. Open docker from the start menu  
+1. When the Docker icon in the tray stops moving up and down, open Powershell.  
 
+![Docker Icon](.gitbook/assets/DockerIcon.png)
 
-   ![Open Docker](.gitbook/assets/DockerStartMenu.png)
+1. To make sure Docker is installed properly, run `docker run hello-world`. Below is a picture of what should happen.  
 
-4. When the Docker icon in the tray stops moving up and down, open Powershell.  
-
-
-   ![Docker Icon](.gitbook/assets/DockerIcon.png)
-
-5. To make sure Docker is installed properly, run `docker run hello-world`. Below is a picture of what should happen.  
-
-
-   ![Docker Hello World](.gitbook/assets/DockerHelloWorld.png)
+![Docker Hello World](.gitbook/assets/DockerHelloWorld.png)
 
