@@ -51,14 +51,16 @@ I will be using Centos 8 for this tutorial, but since the setup is fully contain
 
 ## Run your project
 
-1. Download your project on the server
-2. Enter the project, and run `docker-compose up -d` . Due to the size of the VM, this will take a while.
-3. \(Optional\) To setup a crude CI/CD setup run the following commands. They will run `git pull` from your repository every half hour. 
-
+1. Download your project on the server.
+2. Make a copy of your `docker-compose.yaml` file called `prod-compose.yaml`
+   1. On Linux, run `cp docker-compose.yaml prod-compose.yaml`
+3. For the php application, change the port configuration from `8080:80` to `80:80`
+4. Enter the project directory, and run `docker-compose -f prod-compose.yaml up -d` . Due to the size of the VM, this will take a while.
+5. \(Optional\) To setup a crude CI/CD setup run the following commands. They will run `git pull` from your repository every half hour. 
    1. Setup git so that it only fast forwards when it pulls. Run `git config pull.ff only`
    2. Get the full path of your code directory by running `pwd` in your code directory
    3. Run `crontab -e`, and in the editor that pop up add the following line `*/30 * * * * cd <path to the directory of your code>; git pull`
-   4. In the Compute Engine page, on the column that your VM is on there should be a row called External IP with an ip address. Click that to visit your application. Most browsers will use HTTPS by default, so you may need to explicitly type in `http://<yourip>/`.
+6. In the Compute Engine page, on the column that your VM is on there should be a row called External IP with an ip address. Click that to visit your application. Most browsers will use HTTPS by default, so you may need to explicitly type in `http://<yourip>/`.
 
 ![](.gitbook/assets/gcpcomputeengineip.jpg)
 
