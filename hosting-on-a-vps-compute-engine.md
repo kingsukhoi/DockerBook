@@ -57,11 +57,10 @@ I will be using Centos 8 for this tutorial, but since the setup is fully contain
    1. Setup git so that it only fast forwards when it pulls. Run `git config pull.ff only`
    2. Get the full path of your code directory by running `pwd` in your code directory
    3. Run `crontab -e`, and in the editor that pop up add the following line `*/30 * * * * cd <path to the directory of your code>; git pull`
-   4. In the GCP console, 
+   4. In the Compute Engine page, on the column that your VM is on there should be a row called External IP with an ip address. Click that to visit your application
+   5. 
 
-
-
-
+![](.gitbook/assets/gcpcomputeengineip.jpg)
 
 
 
