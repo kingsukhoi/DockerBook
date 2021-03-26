@@ -1,4 +1,4 @@
-# Hosting on a VPS/Compute Engine \(Incomplete\)
+# Hosting on a VPS/Compute Engine \(Easiest\)
 
 This method of hosting uses docker-compose to host your app. This is similar to how you started the application with docker-compose on your development machine. 
 
