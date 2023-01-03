@@ -19,7 +19,7 @@ ENTRYPOINT nginx -g 'daemon off;'
 
 Here is a break down of each line
 
-* `FROM docker.io/nginx:1.19.7`: This tells `docker build` to go to the docker.io registry, and find an image called "fedora". Docker.io is currently the most popular registry, but other services like GitLab provide the same service as well. The `:33` means pull an image with the tag "33". Docker uses the concept of tags to figure out which image you want. **WARNING,** tags can change image. By default, docker will pull the tag 'latest'. 
+* `FROM docker.io/fedora:33`: This tells `docker build` to go to the docker.io registry, and find an image called "fedora". Docker.io is currently the most popular registry, but other services like GitLab provide the same service as well. The `:33` means pull an image with the tag "33". Docker uses the concept of tags to figure out which image you want. **WARNING,** tags can change image. By default, docker will pull the tag 'latest'. 
 * `RUN dnf install -y nginx`: For Dockerfiles, the first word of each line is a command to `docker build`. Note, it's best practice for the first word to be in all caps.  
 
 
